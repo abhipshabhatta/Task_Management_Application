@@ -1,6 +1,54 @@
 {
-	"users": [],
-	"tasks": [],
-	"categories": []
-  }
-  
+  "users": [],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Complete the project",
+      "description": "Finish all pending tasks",
+      "categoryId": 1,
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Write documentation",
+      "description": "Document the APIs properly",
+      "categoryId": 1,
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Fix bugs",
+      "description": "Resolve bugs reported by the QA team",
+      "categoryId": 2,
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Deploy to production",
+      "description": "Prepare the app for production release",
+      "categoryId": 1,
+      "completed": false
+    },
+    {
+      "id": 5,
+      "title": "Add unit tests",
+      "description": "Write test cases for the task management module",
+      "categoryId": 3,
+      "completed": false
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Work"
+    },
+    {
+      "id": 2,
+      "name": "Bugs"
+    },
+    {
+      "id": 3,
+      "name": "Testing"
+    }
+  ]
+}
