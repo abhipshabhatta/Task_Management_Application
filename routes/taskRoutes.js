@@ -1,4 +1,12 @@
 const express = require("express")
-const taskRoutes = express.Router()
+const taskRouter = express.Router()
 
-module.exports = taskRoutes
+taskRouter.post("/", (req, res) => {
+    red.json({
+        msg:"Task post reached....",
+    })
+})
+
+
+
+module.exports = taskRouter
