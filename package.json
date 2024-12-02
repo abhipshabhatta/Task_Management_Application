@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"start": "nodemon index.js",
+		"start": "node index.js",
 		"json-server": "json-server --watch db.json --port 5000"
 	},
 	"keywords": [
@@ -19,6 +19,7 @@
 	"description": "A task management application built with Node.js, following Domain-Driven Design principles. This app allows users to organize tasks into categories, track due dates, and manage priorities, providing a scalable foundation for real-world project organization.",
 	"dependencies": {
 		"axios": "^1.7.7",
+		"body-parser": "^1.20.3",
 		"dotenv": "^16.4.5",
 		"express": "^4.21.1"
 	},

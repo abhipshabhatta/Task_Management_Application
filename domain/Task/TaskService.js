@@ -1,15 +1,23 @@
-const axios = require("axios")
+const { readDB, writeDB } = require('../../infrastructure/db');
 
 class TaskService {
-	constructor() {}
+  static getAllTasks() {
+    return readDB().tasks || [];
+  }
 
-	// Create a new task
-
-	// Complete a task
-	async completeTask() {}
-
-	// Update task details
-	async updateTask() {}
+  static createTask(title, description, categoryId) {
+    const tasks = this.getAllTasks();
+    const newTask = {
+      id: tasks.length + 1,
+      title,
+      description,
+      categoryId,
+      completed: false,
+    };
+    tasks.push(newTask);
+    writeDB({ tasks });
+    return newTask;
+  }
 }
 
-module.exports = TaskService
+module.exports = TaskService;

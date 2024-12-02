@@ -1,19 +1,23 @@
-const express = require("express")
-require("dotenv").config() // Load environment variables
+const express = require('express');
+const bodyParser = require('body-parser');
+const routes = require('./routes');
 
-const app = express()
-const port = process.env.PORT || 3000
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-// Middleware to parse JSON
-app.use(express.json())
+// Middleware
+app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-	res.json({
-		msg: "Welcome to this Task Management Application",
-	})
-})
+// Routes
+app.use('/api', routes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.message);
+  res.status(500).send('Internal Server Error');
+});
 
 // Start the server
-app.listen(port, () => {
-	console.log(`Server is running on http://localhost:${port}`)
-})
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});

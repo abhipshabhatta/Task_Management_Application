@@ -1,5 +1,9 @@
 class Category {
-
-}
-
-module.exports = Category
+    constructor(id, name) {
+      this.id = id;
+      this.name = name;
+    }
+  }
+  
+  module.exports = Category;
+  

@@ -1,13 +1,17 @@
-const Category = require("./Category")
+const { readDB, writeDB } = require('../../infrastructure/db');
 
 class CategoryService {
-	constructor() {}
+  static getAllCategories() {
+    return readDB().categories || [];
+  }
 
-	// Method to create a new category
-	createCategory() {}
-
-	// Method to add a task to a category
-	addTaskToCategory() {}
+  static createCategory(name) {
+    const categories = this.getAllCategories();
+    const newCategory = { id: categories.length + 1, name };
+    categories.push(newCategory);
+    writeDB({ categories });
+    return newCategory;
+  }
 }
 
-module.exports = CategoryService
+module.exports = CategoryService;
